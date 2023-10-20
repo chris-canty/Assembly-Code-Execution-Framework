@@ -1,0 +1,2 @@
+/usr/bin/ar.exe qc libProject_1.a CMakeFiles/Project_1.dir/sim.cpp.o
+/usr/bin/ranlib.exe libProject_1.a

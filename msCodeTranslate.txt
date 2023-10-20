@@ -1,0 +1,63 @@
+
+R-Type Instructions
+31-25 should all be 0, they are unused
+24-22 opcode 
+21-19 regA
+18-16 regB 
+15-3 should all be 0, they are unused
+2-0 destReg
+
+I-Type Instructions
+31-25 should all be 0, they are unused
+24-22: opcode
+21-19: regA
+18-16: regB
+15-0:  offsetField (an 16-bit, 2's complement number with a range 
+of -32768 to 32767)
+
+O-type Instructions
+bits 24-22: opcode
+bits 21-0:  unused (should all be 0)
+
+	
+8454151  = 0000000-010-000-001-0000000000000111 		load register 1 with 5
+    Opcode = 010 = LW 
+    RegA = 000 = 0
+    RegB = 001 = 1
+    offsetField = 111 = 7
+
+9043971  = 0000000-010-001-010-0000000000000011  		load register 2 
+    Opcode = 010 = LW 
+    RegA = 001 = 1
+    RegB = 010 = 2
+    offsetField = 11 = 3
+
+655361   = 0000000-000-001-010-0000000000000001
+    Opcode = 000 = ADD 
+    RegA = 001 = 1
+    RegB = 010 = 2 
+    destreg = 1 = 1
+
+16842754 = 0000000-100-000-001-0000000000000010
+    Opcode = 100 = BEQ 
+    RegA = 000 = 0
+    RegB = 001 = 1
+    offsetField = 10 = 2
+
+16842749 = 0000000-100-000-000-1111111111111101
+    Opcode = 100 = BEQ
+    RegA = 000 = 0 
+    RegB = 000 = 0 
+    offsetField = 65533
+
+29360128 = 0000000-111-000-000-0000000000000000
+    Opcode = 111 = NOOP
+    RegA = 000 = 0
+    RegB = 000 = 0 
+    
+
+25165824 = 0000000-110-000-000-0000000000000000
+    Opcode = 010 = HALT
+    RegA = 000 = 0
+    RegB = 001 = 0
+  
